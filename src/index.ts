@@ -205,7 +205,7 @@ class NanoBananaMCP {
       };
     } catch (error) {
       if (error instanceof z.ZodError) {
-        throw new McpError(ErrorCode.InvalidParams, `Invalid API key: ${error.errors[0]?.message}`);
+        throw new McpError(ErrorCode.InvalidParams, `Invalid API key: ${error.issues[0]?.message}`);
       }
       throw error;
     }
